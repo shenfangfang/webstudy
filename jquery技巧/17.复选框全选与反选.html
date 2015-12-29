@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery/jquery-1.11.3.js"></script>
+    <title></title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+
+<form method="post" action="">
+    <h4>你喜爱的水果是：</h4>
+    <input type="checkbox" name="items" value="苹果"/>苹果
+    <input type="checkbox" name="items" value="橘子"/>橘子
+    <input type="checkbox" name="items" value="香蕉"/>香蕉
+    <input type="checkbox" name="items" value="草莓"/>草莓<br/> <br/>
+    <input type="button" id="CheckedAll" value="全选"/>
+    <input type="button" id="CheckedNo"  value="全不选"/>
+    <input type="button" id="CheckedRev"  value="反选"/>
+    <input type="submit" id="Send"name="btns" value="提交"/>
+</form>
+</body>
+<script type="text/javascript">
+    $(function(){
+//        在之前的JQuery版本中，都是使用attr()来访问对象属性，但是对于某些情况，例如input的属性disabled，有的浏览器只要写了disabled就可以，有的要写disabled=”disabled“，因此从1.6版本开始，使用新的方法prop()来获取这些属性，返回值是布尔值。
+
+        //全选
+        $("#CheckedAll").click(function(){
+            $('[name=items]:checkbox').prop('checked',true);
+        });
+        //全不选
+        $("#CheckedNo").click(function(){
+            $('[name=items]:checkbox').prop('checked',false);
+
+        });
+        //反选
+        $("#CheckedRev").click(function(){
+            $('[name=items]:checkbox').each(function(){
+                this.checked=!this.checked;
+            })
+        });
+
+        //输出
+        $("#Send").click(function(){
+            var str="你选中的是：\n\r";
+            $('[name=items]:checkbox:checked').each(function(){
+                str+=$(this).val()+"\n\r";
+            })
+            alert(str);
+
+        });
+    })
+</script>
+</html>
