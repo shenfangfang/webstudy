@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <title></title>
+    <style type="text/css">
+        .selectbox {
+            float: left;
+            margin-left: 50px;
+        }
+        div span {
+            font-size: 12px;display:block;width:100px;height:20px;line-height:20px;margin-bottom:2px;
+            background-color:rgba(0,0,0,0.2)
+        }
+    </style>
+</head>
+<body>
+<div class="selectbox">
+    <select multiple id="select1" style="width:100px;height:100px;">
+        <option value="1">财务部</option>
+        <option value="2">产品部</option>
+        <option value="3">生产部</option>
+        <option value="4">市场部</option>
+        <option value="5">销售部</option>
+        <option value="6">应用软件部</option>
+        <option value="7">基础软件部</option>
+    </select>
+
+    <div>
+        <span id="right">选中添加到右边&gt&gt</span>
+        <span id="allright">全部添加到右边&gt&gt</span>
+    </div>
+</div>
+<div class="selectbox">
+    <select multiple id="select2" style="width:100px;height:100px;">
+        <option value="8">综合管理部</option>
+    </select>
+
+    <div><span id="left">&lt&lt选中添加到左边</span>
+        <span id="allleft">&lt&lt全部添加到左边</span>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+    $(function(){
+//        添加到右边
+          $("#right").click(function(){
+              $("option:selected").appendTo($("#select2")) ;
+          });
+
+        $("#allright").click(function(){
+            $("#select1 option").appendTo($("#select2"));
+        });
+
+        //        添加到左边
+        $("#left").click(function(){
+            $("option:selected").appendTo($("#select1")) ;
+        });
+
+        $("#allleft").click(function(){
+            $("#select2 option").appendTo($("#select1"));
+        });
+    })
+</script>
+</html>

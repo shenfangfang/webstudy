@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        form {
+            width: 430px;
+            margin-left: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        label, input {
+            margin-top: 5px;
+        }
+
+        .sub {
+            margin-left: 60px;
+        }
+
+        .sub input {
+            font-size: 12px;
+        }
+
+        .redhigh {
+            color: Red;
+            font-size: 10px;
+        }
+
+        /*提示语言颜色*/
+        .onSuccess {
+            color: green;
+        }
+
+        .onError {
+            color: red
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<form action="" method="post">
+    <div class="int">
+        <label for="username">&nbsp;用户名:</label>
+        <input type="text" id="username" class="required"/>
+    </div>
+    <div class="int">
+        <label for="password">&nbsp;&nbsp;密码:</label>
+        <input type="text" id="password" class="required"/>
+    </div>
+    <div class="int">
+        <label for="realname">真实姓名:</label>
+        <input type="text" id="realname"/>
+    </div>
+    <div class="sub">
+        <input type="submit" value="提交" id="send"/>
+        <input type="reset" value="重置" id="res"/>
+    </div>
+</form>
+</body>
+<script type="text/javascript">
+    $(function () {
+        //如果是必填的，则加红星标识.
+        $("form :input.required").each(function () {
+            var $required = $("<strong class='redhigh'>*</strong>"); //创建元素
+            $(this).parent().append($required); //然后将它追加到文档中
+        });
+
+        $("form :input.required").blur(function () {
+            var $parent = $(this).parent();
+            $parent.find(".formtrips").remove();
+            //验证用户名
+            if ($(this).is("#username")) {
+                if (this.value == "" || this.value.length < 6) {
+                    var $errorMsg = $("<span class='formtrips onError'>请输入至少6位用户名</span>");
+                    $parent.append($errorMsg);
+                }
+                else {
+                    var $okMsg = $("<span class='formtrips onSuccess'>输入正确</span>");
+                    $parent.append($okMsg);
+                }
+            }
+            //验证密码
+            else if ($(this).is("#password")) {
+                if (this.value == "" || this.value.length < 6) {
+                    var $errorMsg = $("<span class='formtrips onError'>请输入至少6位密码</span>");
+                    $parent.append($errorMsg);
+                }
+                else {
+                    var $okMsg = $("<span class='formtrips onSuccess'>输入正确</span>");
+                    $parent.append($okMsg);
+                }
+            }
+        })
+//                实时提醒 ，keyup事件能在用户每次松开按键时触发，focus事件在元素得到焦点时触发。
+                .keyup(function () {
+                    $(this).triggerHandler("blur")
+                })
+                .focus(function () {
+                    $(this).triggerHandler("blur")
+                });
+        //  提交
+        $("#send").click(function () {
+            $("form :input.required").trigger("blur");
+            var numError = $("form .onError").length;
+            if (numError) {
+                return false;
+            }
+            else {
+                alert("注册成功");
+            }
+        })
+    })
+</script>
+</html>

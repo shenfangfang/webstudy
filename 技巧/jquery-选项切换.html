@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        /*.tab中的font-size:0 可以去掉li元素之间的间距，但使页面中的字体大小都变成0，只需要再在li选择器中重新设置font-size就可以改变字体大小了*/
+        *{padding:0;margin:0}
+      .tab{width:250px;height:200px; font-size:14px;border:solid 1px black;font-size:0;padding:20px;}
+        ul li{ display:inline;border:solid 1px black; font-size:14px;
+list-style-type:none;margin:5px 5px 0 0;padding:3px 3px 0 3px;}
+        .tab_box{width:250px;height:180px;border:solid 1px #5c5c5c;font-size:14px;}
+        .selected{background:darkgrey}
+        .hide{display:none;}
+    </style>
+</head>
+<body>
+<div class="tab">
+    <div class="tab_menu">
+        <ul>
+            <li class="selected">时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+    </div>
+    <div class="tab_box">
+        <div>时事</div>
+        <div class="hide">体育</div>
+        <div class="hide">娱乐</div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $(function(){
+       var $div_li=$("div.tab_menu ul li");
+        $div_li.click(function(){
+            $(this).addClass("selected");
+            $(this).siblings().removeClass("selected");
+//            获取当前单击的<li>元素在全部<li>元素中的索引
+            var index=$div_li.index(this);
+            $("div.tab_box div").eq(index).show() //显示<li>元素对应的<div>元素
+                                .siblings().hide();//隐藏其他元素
+        })
+    })
+</script>
+</html>

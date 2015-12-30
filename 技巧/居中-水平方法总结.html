@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中的几种方法</title>
+
+    <style type="text/css">
+        /*水平居中---inline 元素 父元素设置：text-align:center*/
+        .box_one {
+            text-align: center;
+        }
+        /*定宽block元素 margin左右值设为 auto*/
+        .box_two {
+            background: palevioletred;
+            width: 200px;
+            height: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /*不定宽block元素1  加入table标签，为table设置margin左右为auto*/
+        .box_three {
+            background: yellow;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*不定宽block元素2  设置子元素display:inline ，设置父元素text-align:cente*/
+        .box_four {
+            display: inline;
+        }
+
+        .box_four_parent {
+            text-align: center;
+            background: lightgreen;
+        }
+
+
+        /*不定宽block元素3     父元素设置float:left; position:relative和left：50%， 子元素设置position:relative和left:-50%*/
+        .box_five_parent{
+            float: right;
+            position: relative;
+            right: 50%;}
+        .box_five{
+            position: relative;
+            right: -50%;}
+
+    </style>
+</head>
+<body>
+<!--水平居中-inline元素-->
+<div class="box_one">
+    <a href="#">我是一个inline元素</a>
+</div>
+
+<div class="box_two">我是一个定宽块状元素</div>
+
+
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <div class="box_three">我是不定宽块状元素111111111</div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="box_four_parent">
+    <div class="box_four">我是不定宽块状元素222222</div>
+</div>
+<div class="box_five_parent">
+    <div class="box_five">我是不定宽块状元素3333333333</div>
+</div>
+</body>
+</html>

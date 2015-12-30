@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>负边距对浮动元素的影响</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-right:-100px;
+        }
+        #one{
+            background-color: red;
+        }
+        #two{
+            background-color: blue;
+        }
+        #three{
+            background-color: yellow;
+        }
+        p{clear:both; margin-bottom:20px;}
+    </style>
+</head>
+<body>
+<div id="one">one </div>
+<div id="two">two </div>
+<div id="three">three </div>
+<p>上面的效果是为三个div设置margin-right:-100px;</p>
+<p>分析：margin-right为0，三个div会紧挨在一起，如果margin-right为正，他们将隔开一定距离，为负，当然就重叠啦！由此可以推测，当浏览器窗口的宽度小于300px时，黄色的div将被挤到下一行</p>
+</body>
+</html>

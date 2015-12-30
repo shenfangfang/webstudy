@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>左右负边距对元素宽度的影响</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wraper{
+            width: 400px;
+            height: 50px;
+            margin: auto;
+        }
+        #content{
+            background-color: #ccc;
+            height: 50px;
+        }
+        .white{background-color: white;height:10px;}
+        #wraper1{
+            width: 400px;
+            height: 50px;
+            margin: auto;
+
+        }
+        #content1{
+            background-color: #ccc;
+            height: 50px;
+            /*增加左侧正边距边距*/
+            margin-left:100px;
+        }
+
+        #wraper2{
+            width: 400px;
+            height: 50px;
+            margin: auto;
+
+        }
+        #content2{
+            background-color: #ccc;
+            height: 50px;
+            /*增加左侧负边距边距*/
+            margin-left:-100px;
+        }
+    </style>
+</head>
+<body>
+<div id="wraper">
+    <div id="content">原始宽度</div>
+</div>
+<div class="white"></div>
+
+<div id="wraper1">
+    <div id="content1">增加左侧正边距  margin-left:100px</div>
+</div>
+
+<div class="white"></div>
+
+<div id="wraper2">
+    <div id="content2">增加左侧负边距  margin-left:-100px</div>
+</div>
+<p>以上效果可以看出，左右负边距可以影响元素的宽度。margin-left是正值时content的左边界将右移（左边界远离父元素的左边界，从而宽度减小），而margin-left为负值，反过来就是content的左边界将向左移动（从而把宽度拉大）。右外边距为负值的情况同理。</p>
+</body>
+</html>

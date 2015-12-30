@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
     <title></title>
     <style type="text/css">
 
@@ -9,17 +10,17 @@
 </head>
 <body>
 
-<form method="post" action="">
-    <h4>你喜爱的水果是：</h4>
-    <input type="checkbox" name="items" value="苹果"/>苹果
-    <input type="checkbox" name="items" value="橘子"/>橘子
-    <input type="checkbox" name="items" value="香蕉"/>香蕉
-    <input type="checkbox" name="items" value="草莓"/>草莓<br/> <br/>
-    <input type="button" id="CheckedAll" value="全选"/>
-    <input type="button" id="CheckedNo"  value="全不选"/>
-    <input type="button" id="CheckedRev"  value="反选"/>
-    <input type="submit" id="Send"name="btns" value="提交"/>
-</form>
+ <form method="post" action="">
+     <h4>你喜爱的水果是：</h4>
+     <input type="checkbox" name="items" value="苹果"/>苹果
+     <input type="checkbox" name="items" value="橘子"/>橘子
+     <input type="checkbox" name="items" value="香蕉"/>香蕉
+     <input type="checkbox" name="items" value="草莓"/>草莓<br/> <br/>
+     <input type="button" id="CheckedAll" value="全选"/>
+     <input type="button" id="CheckedNo"  value="全不选"/>
+     <input type="button" id="CheckedRev"  value="反选"/>
+     <input type="submit" id="Send"name="btns" value="提交"/>
+ </form>
 </body>
 <script type="text/javascript">
     $(function(){
@@ -27,7 +28,7 @@
 
         //全选
         $("#CheckedAll").click(function(){
-            $('[name=items]:checkbox').prop('checked',true);
+          $('[name=items]:checkbox').prop('checked',true);
         });
         //全不选
         $("#CheckedNo").click(function(){
@@ -37,7 +38,7 @@
         //反选
         $("#CheckedRev").click(function(){
             $('[name=items]:checkbox').each(function(){
-                this.checked=!this.checked;
+                 this.checked=!this.checked;
             })
         });
 
@@ -50,6 +51,6 @@
             alert(str);
 
         });
-    })
+ })
 </script>
 </html>

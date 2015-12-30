@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        .msg{width:400px;font-size:20px;}
+        .msg_caption span{background:#5c5c5c;}
+    </style>
+</head>
+<body>
+<div class="msg">
+    <div class="msg_caption">
+         <span class="bigger">放大</span>
+         <span class="smaller">缩小</span>
+    </div>
+    <div class="para">
+        <p>在电脑的短暂历史中，黑客们绝对是独领风骚的一个群体。他们有的善于编写木马、病毒，以制造网络混乱为乐；也有的用自己出众的电脑知识伸张正义、服务大众；还有这样一群黑客，他们多次引领电脑发展进程，有时甚至以一己之力完成了对电脑的改造，并逐步将电脑和因特网修整成了我们现在的这种模样。下面就来看看十大强悍的黑客吧！
+        </p>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $("span").click(function(){
+            var thisEle= $(".para").css("font-size");
+            var textFontSize=parseFloat(thisEle,10);
+            var unit=thisEle.slice(-2);
+            var cName=$(this).attr("class");
+            if(cName=="bigger"){
+                textFontSize+=2;
+            }
+            else{
+                textFontSize-=2;
+            }
+            $(".para").css("font-size",textFontSize+unit);
+
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中的几种方法</title>
+    <style type="text/css">
+        /*父元素高度确定的单行文本  设置父元素的height和line-height一致*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box_one {
+            border: 2px solid palevioletred;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        /*父元素高度确定的多行文本  加入table标签，设置td标签属性 vertical-align:middle*/
+        table td {
+            border: 2px solid palevioletred;
+            height: 300px;
+            vertical-align: middle;
+        }
+
+        /*父元素高度确定的多行文本  设置父元素display:table-cell；vertical-align:middle*/
+        .box_three_parent{
+            border: 2px solid palevioletred;
+            height: 300px;
+            display:table-cell;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="box_one">
+    <p>我是父元素高度确定的单行文本</p>
+</div>
+
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <div class="box_two">
+                <p>我是父元素高度确定的多行文本11111</p>
+
+                <p>我是父元素高度确定的多行文本11111</p>
+                <img src="images/4.gif"/>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+
+
+    <div class="box_three_parent">
+        <p>我是父元素高度确定的多行文本22222</p>
+
+        <p>我是父元素高度确定的多行文本22222</p>
+        <img src="images/4.gif"/>
+    </div>
+</table>
+
+
+</body>
+</html>

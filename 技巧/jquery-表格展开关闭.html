@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+      table{width:300px;border:1px solid black;font-size:12px;border-collapse:collapse;}
+      th{border-bottom:1px solid black;}
+      .parent{background:rgba(0,0,0,0.2);cursor:default }
+      .selected{background:rgba(0,255,255,0.5)}
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+        <tr><th>姓名</th><th>性别</th><th>居住地</th></tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="row_1"><td colspan="3">前台设计组</td></tr>
+    <tr class="child_row_1"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+    <tr class="child_row_1"><td>李四</td><td>男</td><td>山西大同</td></tr>
+    <tr class="child_row_1"><td>吴晓刚</td><td>男</td><td>北京</td></tr>
+
+    <tr class="parent" id="row_2"><td colspan="3">后台开发组</td></tr>
+    <tr class="child_row_2"><td>刘晓莉</td><td>女</td><td>浙江宁波</td></tr>
+    <tr class="child_row_2"><td>张一山</td><td>男</td><td>上海</td></tr>
+    <tr class="child_row_2"><td>张蒙蒙</td><td>女</td><td>乌鲁木齐</td></tr>
+    </tbody>
+</table>
+</body>
+<script type="text/javascript">
+//    高亮现实李四那行
+$("tr:contains('李四')").addClass("selected");
+//点击展开隐藏
+    $(function(){
+      $(".parent").click(function(){
+          if($(this).hasClass("selected")) {
+              $(this).removeClass("selected")
+                     .siblings('.child_'+this.id).show();
+          }
+          else{
+              $(this).addClass("selected")
+                      .siblings('.child_'+this.id).hide();
+          }
+
+
+      });
+    })
+</script>
+</html>

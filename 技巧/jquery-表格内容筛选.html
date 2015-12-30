@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        body{width:300px;border:1px solid black;font-size:12px;padding: 20px;}
+        table{width:300px;border-collapse:collapse;}
+        th{border-bottom:1px solid black;}
+        .parent{background:rgba(0,0,0,0.2);cursor:default }
+        .selected{background:rgba(0,255,255,0.5)}
+    </style>
+</head>
+<body>
+<div>
+    筛选:<input id="filter"/> <br/> <br/>
+</div>
+<table>
+    <thead>
+    <tr><th>姓名</th><th>性别</th><th>居住地</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+    <tr><td>刘四</td><td>男</td><td>山西大同</td></tr>
+    <tr><td>张晓刚</td><td>男</td><td>北京</td></tr>
+    <tr><td>刘晓莉</td><td>女</td><td>浙江宁波</td></tr>
+    <tr><td>张一山</td><td>男</td><td>上海</td></tr>
+    <tr><td>张蒙蒙</td><td>女</td><td>乌鲁木齐</td></tr>
+    </tbody>
+</table>
+</body>
+<script type="text/javascript">
+
+    //点击展开隐藏
+    $(function() {
+        $("#filter").keyup(function () {
+               $("tbody tr ").hide()
+                             .filter(":contains('"+$(this).val()+"')").show();
+        });
+
+    })
+</script>
+</html>

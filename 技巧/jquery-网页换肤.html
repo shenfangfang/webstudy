@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/skin_0.css" rel="stylesheet" type="text/css" id="cssfile"/>
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        *{padding:0;margin:0}
+        ul{width:100px;height:30px;border:solid 1px darkgrey;font-size:0;margin-bottom:20px;}
+        ul li{list-style-type:none;display:inline-block;width:20px;height:20px;
+            margin: 5px 5px;  }
+        #skin_0{background:palevioletred;}
+        #skin_1{background:dodgerblue;}
+        #skin_2{background:lightgreen;}
+        div h1{line-height:40px;height:40px;width:100px;font-size:20px;float:left;border:solid 1px lightgrey;margin-right:10px;}
+        .selected{border:1px solid black;}
+    </style>
+</head>
+<body>
+<ul id="skin">
+    <li id="skin_0" class="selected">粉红色</li>
+    <li id="skin_1">天蓝色</li>
+    <li id="skin_2">淡绿色</li>
+</ul>
+<div><h1>时事新闻</h1></div>
+<div><h1>娱乐新闻</h1></div>
+
+</body>
+<script type="text/javascript">
+    $(function(){
+        var $li=$("#skin li");
+       $li.click(function(){
+           $("#"+this.id).addClass("selected") //当前同辈元素被选中
+                   .siblings().removeClass("selected");
+
+          $("#cssfile").attr("href","css/"+this.id+".css");
+       });
+    })
+</script>
+</html>
