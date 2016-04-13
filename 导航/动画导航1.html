@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body {
+            background: #444;
+        }
+
+        .nav {
+            width: 500px;
+            height: 40px;
+            margin: 200px auto;
+        }
+
+        .nav a {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            text-decoration: none;
+            color: #999;
+            font-size: 18px;
+            font-weight: 700;
+            padding-bottom: 8px;
+        }
+
+        .nav a:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            right: 40%;
+            width: 20%;
+            border-bottom: 3px solid #6bc30d;
+            opacity: 0.5;
+            transition: all linear 0.5s;
+        }
+
+        .nav a:hover {
+            color: #fff;
+        }
+
+        .nav a:hover:after {
+            left: 0;
+            width: 100%;
+            opacity: 1.0;
+            transition: all linear 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+<div class="nav">
+    <a href="#">赖皮</a>
+    <a href="#">礼物</a>
+    <a href="#">归档</a>
+    <a href="#">联系我们</a>
+    <a href="#">关于我们</a>
+</div>
+</body>
+
+</html>

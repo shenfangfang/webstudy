@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>初识jQuery</title>
+    <meta charset="UTF-8">
+    <script  type="text/javascript" src="jquery/jquery-2.1.4.js"  ></script>
+    <style type="text/css">
+        div
+        {
+            width: 160px;
+            border: solid 1px #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        .color
+        {
+            color: Orange;
+        }
+        .backcolor
+        {
+            background-color: Orange;
+            color: White;
+        }
+
+
+        @-webkit-keyframes redToBlue{
+            from{
+                background: red;
+            }
+            20%{
+                background:green;
+            }
+            to{
+                background:yellow;
+            }
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 20px auto;
+            -webkit-animation-name:redToBlue;
+            -webkit-animation-duration: 8s;
+            -webkit-animation-timing-function: ease;
+            -webkit-animation-delay: 5s;
+            -webkit-animation-fill-mode: backwards
+        ;
+        }
+    </style>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="test">Hello iMooc!</div>
+<button onclick="sayHello()">点我！</button>
+<button onclick="sayHello2()">点我2！</button>
+
+<script type="text/javascript">
+    function sayHello(){
+        $("#test").hide();
+    }
+</script>
+<script type="text/javascript">
+    function sayHello2(){
+        $("#test").show("slow","linear",function(){
+            $(this).text("1");
+        });
+    }
+</script>
+</body>
+</html>
