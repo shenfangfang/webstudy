@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input id="foo" value="5"/>
+<script>
+//    利用存取器，可以实现数据对象与DOM对象的双向绑定。
+//    var user=new Object();
+//    Object.defineProperty(user,'name',{
+//        get: function() {
+//            return document.getElementById("foo").value;
+//        },
+//        set: function(newValue) {
+//            document.getElementById("foo").value = newValue;
+//        },
+//        configurable: true
+//    });
+//    user.name="我是谁";
+//    document.write(user.name);
+
+
+//    var o = {a: "foo", b: 42, c: {}};
+////    Object.keys方法和Object.getOwnPropertyNames方法很相似，一般用来遍历对象的属性,它们的区别在于，Object.keys方法只返回可枚举的属性（关于可枚举性的详细解释见后文），Object.getOwnPropertyNames方法还返回不可枚举的属性名
+//    var a=["Hello","World"]
+//    Object.keys(a).forEach(function (element,index,array) {
+//        document.write('Object.keys(a):'+element+'</br>');
+//    })
+//    Object.getOwnPropertyNames(a).forEach(function (element,index,array) {
+//        document.write('Object.getOwnPropertyNames(a):'+element+'</br>');
+//    })
+
+
+////    Object.create() 方法创建一个拥有指定原型和若干个指定属性的对象
+//    var o1 = Object.create(o, {
+//        hello: {value: "hello"},
+//        age: {value: 20,writable:true}
+//    });
+//
+////Object.defineProperties() 方法在一个对象上添加或修改一个或者多个自有属性，并返回该对象。
+//    Object.defineProperties(o1,{
+//        sex:{value:"女",enumerable:true} , //添加一个新属性
+//        age:{value:25,enumerable:false} //修改age属性
+//    })
+//
+////Object.defineProperty() 方法直接在一个对象上定义一个新属性，或者修改一个已经存在的属性， 并返回这个对象。
+//    Object.defineProperty(o1,"age",{value:30}) ;
+//    alert(o1.age);
+////    Object.freeze() 方法可以冻结一个对象。冻结对象的所有自身属性都不可能以任何方式被修改。
+////    Object.freeze(o1);
+////    Object.getOwnPropertyDescriptor() 返回指定对象上一个自有属性对应的属性描述符
+//     var o1age=Object.getOwnPropertyDescriptor(o1,"age");
+//     alert(o1age.value);
+//
+////    Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性）组成的数组。
+//    function outProperty(obj){
+//        Object.getOwnPropertyNames(obj).forEach(function(val,inx,array){
+//            document.write(array[inx]+"</br>");
+//        } )
+//    }
+//    outProperty(o1);
+////返回该对象的原型。
+//    if(Object.getPrototypeOf(o1)===o){alert("ok!");}
+////    hasOwnProperty() 方法用来判断某个对象是否含有指定的自身属性。
+//    if(o1.hasOwnProperty("age")){alert("ok!");}
+////    isPrototypeOf() 方法测试一个对象是否存在于另一个对象的原型链上
+//    if(o.isPrototypeOf(o1)){alert("ok!");}
+////propertyIsEnumerable() 方法返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性。
+//    if(o1.propertyIsEnumerable("age")){alert("ok!age is Enumerable");}     //true
+//    if(o1.propertyIsEnumerable("sex")){alert("ok!sex is Enumerable");}   //false
+//
+//    alert(o1.toString());
+
+//Object.observe方法用于观察对象属性的变化。
+//var o1 = {};
+//
+//Object.observe(o1, function(changes) {
+//    changes.forEach(function(change) {
+//        document.write(change.type, change.name, change.oldValue);
+//    });
+//});
+//o1.foo = 1;
+
+
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+     构造函数模式
+      缺点是每个方法都需要在每个实例上创建一遍,但是创建两个完成相同任务的方法没有必要，当然可以把sayName函数放到构造函数外部，但是这样一来，如果需要定义很多个方法，那么就要定义多个全局函数
+     */
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayName = new Function("alert(this.name)");
+    }
+    var person1 = new Person("p", 10);
+    if (person1.constructor == Person) {
+        document.write("构造函数Person的实例对象person1的constructor属性指向Person" + "</br>");
+    }
+    document.write(person1.constructor + "</br>");
+    document.write(person1.sayName + "</br>");
+
+
+
+
+
+    //原型模式，在原型对象中定义属性和方法
+    function Student() {
+    }
+    /* 构造函数的Student的属性prototype对象中的constructor属性指向Student
+     但使用对象字面量方法创建原型对象，相当于完全重写了原先的prototype对象，此时prototype对象的constructor属性指向的就是Object了，而不是Student。需要特意在Student.prototype中设置constructor：Student才能重新指向Student。
+     缺点是对于引用类型的属性，在一个实例中进行修改，其他实例中也会一样改变。如例子中在student1中对score属性增加了数值100，在student2中score也包含了新增加的分数100
+     */
+    Student.prototype = {
+        constructor: Student,
+        name: "s1",
+        score: [60, 80, 90],
+    }
+
+    var student1 = new Student();
+    document.write(Student.prototype.constructor + "</br>");
+    student1.score.push(100);
+    var student2 = new Student();
+    document.write(student2.score + "</br>");
+
+
+
+
+    //构造函数+原型模式  构造函数中定义实例对象的属性，而在原型对象中定义共有的属性和方法。
+
+    function Glass(name,color) {
+        this.name = name;
+        this.color=color;
+        this.use=["喝水","存储果汁"]
+    }
+    Glass.prototype = {
+        constructor: Glass,
+        height: 100,
+        sayUse: function () {
+            alert(this.use);
+        }
+    }
+
+    var glass1 = new Glass("glass1","red");
+    glass1.use.push("其他用途");
+    document.write("glass1:"+ "</br>"+glass1.name+ "</br>"+glass1.color+ "</br>"+glass1.height+"</br>"+glass1.use+ "</br>");
+
+    var glass2 = new Glass("glass2","blue");
+    document.write("glass2:"+ "</br>"+glass2.name+ "</br>"+glass2.color+ "</br>"+glass2.height+"</br>"+glass2.use+ "</br>");
+</script>
+</html>

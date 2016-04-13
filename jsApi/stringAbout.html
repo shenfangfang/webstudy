@@ -15,18 +15,11 @@
     var txt="Hello world!";
     var str=" abcdefg hi ";
     document.write("<p> anchor:"+txt.anchor("myanchor")+"</p>");
-    document.write("<p> big:"+txt.big()+"</p>");
-//    document.write("<p> blink:"+txt.blink()+"</p>");  //html5不再支持，此标签被废弃
-    document.write("<p> bold:"+txt.bold()+"</p>");
     document.write("<p> charAt 4:"+txt.charAt(4)+"</p>");
     document.write("<p> charCodeAt 4:"+txt.charCodeAt(4)+"</p>");
     document.write("<p> concat txt+txt:"+txt.concat(txt)+"</p>");
-//    document.write("<p> fixed:"+txt.fixed()+"</p>"); //html5不支持打印机字体<tt></tt>
-    document.write("<p> fontcolor:"+txt.fontcolor("rgba(0,0,0,.4)")+"</p>");
-    document.write("<p> fontsize:"+txt.fontsize(5)+"</p>");
     document.write("<p> fromCharCode:"+String.fromCharCode(65,66,67)+"</p>");
     document.write("<p> indexOf('world',4):"+txt.indexOf("world",4)+"</p>");
-    document.write("<p> italics:"+txt.italics()+"</p>");
     document.write("<p> txt.lastIndexOf('wo',6):"+txt.lastIndexOf("wo",5)+"</p>");
     document.write("<p> link:"+txt.link("http://www.baidu.com")+"</p>");
     document.write("<p> match(/o/g):"+txt.match(/o/g)+"</p>");
@@ -34,20 +27,13 @@
 //    document.write("<p> replace('o','ABC'):"+txt.replace('o','ABC')+"</p>");
     document.write("<p> search(/[h]/i):"+txt.search(/[h]/i)+"</p>");
     document.write("<p> slice(2,3):"+txt.slice(2,5)+"</p>");
-    document.write("<p> small :"+txt.small()+"</p>");
-    document.write("<p> split('o',3):"+txt.split("o",3)+"</p>");
-    document.write("<p> strike():"+txt.strike()+"</p>");
-    document.write("<p>sub: " + txt.sub() + "</p>");
-    document.write("<p>sup: " + txt.sup() + "</p>");
+    document.write("<p> split('o'):"+txt.split("o")+"</p>");
     document.write("<p>toLowerCase: " + txt.toLowerCase() + "</p>");
     document.write("<p>toUpperCase: " + txt.toUpperCase() + "</p>");
     document.write("<p>valueOf: " + txt.valueOf() + "</p>");
     document.write("<p>substr(2,3): " + txt.substr(2,3) + "</p>");
     document.write("<p>substring(2,3): " + txt.substring(2,3) + "</p>");
     document.write("<p>trim(): " + str.trim() + "</p>");
-    document.write("<p>trimLeft(): " + str.trimLeft() + "</p>");
-    document.write("<p>trimRight(): " + str.trimRight() + "</p>");
-
 
 
 </script>

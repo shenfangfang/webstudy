@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+//    交换字符串中的两个单词 （使用特殊变量$n)
+    var re = /(\w+)\s(\w+)/;
+    var str = "John Smith";
+    var newstr = str.replace(re, "$2, $1");
+    document.writeln(newstr);
+
+//使用特殊变量名$& 作为替换字符串的一部分。
+    var propertyName="borderTop";
+    var newString = propertyName.replace(/[A-Z]/, '-' + '$&'.toLowerCase());
+    document.writeln(newString);
+
+
+//将华氏温度转换为对等的摄氏温度
+    function f2c(x)
+    {
+        function convert(str, p1, offset, s)
+        {
+            return ((p1-32) * 5/9) + "C";
+        }
+        var s = String(x);
+        var test = /(\d+(?:\.\d*)?)F\b/g;
+        return s.replace(test, convert);
+    }
+document.write(f2c("212F"))
+</script>
+</html>

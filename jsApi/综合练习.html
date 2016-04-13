@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    //1.已知数组var stringArray=["This"，"is","BeiJing"],alert "This is BeiJing"
+    var stringArray=["This","is","BeiJing"];
+    var stringFromArray=stringArray.join(' ');
+    document.write(stringFromArray+"</br>");
+
+   //2.已知有字符串foo=”get-element-by-id”,写一个function将其转化成驼峰表示法”getElementById”
+    var foo='get-element-by-id';
+    function combo(msg){
+        var msgArray=msg.split("-");
+        var msgString;
+        for(i=1;i<msgArray.length;i++){
+            msgArray[i]=msgArray[i].charAt(0).toUpperCase()+msgArray[i].substr(1,msgArray[i].length);
+        }
+        msgString=msgArray.join("");
+        return msgString;
+    }
+    document.write(combo(foo)+"</br>");
+
+   //3.var numberArray = [3,6,2,4,1,5]; （考察基础API）
+       //    1) 实现对该数组的倒排，输出[5,1,4,2,6,3]
+      //    2) 实现对该数组的降序排列，输出[6,5,4,3,2,1]
+    var numberArray = [3,6,2,4,1,5];
+    var dao=numberArray.reverse();
+    document.write("["+numberArray.reverse()+"]</br>");
+    document.write("["+numberArray.sort(function(a,b){return b-a})+"]</br>");
+
+//4.输出今天的日期，以YYYY-MM-DD的方式，比如今天是2014年9月26日，则输出2014-09-26
+    var today=new Date();
+    var year=today.getFullYear();  // 获取年，getFullYear()返回4位的数字
+    var month=today.getMonth()+1;  // 获取月，月份比较特殊，0是1月，11是12月
+        month=month.length>1?month:"0"+month;//将月份变成两位显示
+    var day=today.getDay().length>1?today.getDay():"0"+today.getDay();//获取日，变成两位显示
+    document.write(year+"-"+month+"-"+day+"</br>");
+//5.用js实现随机选取10–100之间的10个数字，存入一个数组，并排序。
+    function radomArray(min,max){
+        var numArray=[];
+        for(i=0;i<10;i++){
+            numArray[i]=Math.floor(Math.random()*(max-min+1)+min);
+        }
+        return numArray.sort();
+    }
+    document.write(radomArray(10,100));
+</script>
+</html>

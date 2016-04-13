@@ -9,13 +9,43 @@
  <h1>arr2=[1,2,3,4,5]</h1>
 </body>
 <script type="text/javascript">
-    var arr1=['a','b','c','d','e'];arr2=[1,2,3,4,5];
+    var arr1=['a','b','c','d','e'];
+    var arr2=[1,2,3,4,5];
+    var arr3=["hello","world"];
+    function sortNumber(a,b){return a-b;}
+    var arr3=[1,2];
+    function arrayFor(element,index,array){document.writeln(element+1);}
+    document.write("forEach:");
+    arr3.forEach(arrayFor);
+    document.write("map:");
+    arr3.map(arrayFor);
     document.write("<p>arr1.concat(arr2):"+arr1.concat(arr2)+"</p>");
     document.write("<p>arr1.join('*'):"+arr1.join('*')+"</p>");
+    document.write("<p>arr1.toString():"+arr1.toString()+"</p>");
     document.write("<p>arr1.pop():"+arr1.pop()+"</p>");
     document.write("<p>arr1.push('f'):"+arr1.push('f')+"</p>");
     document.write("<p>arr1.reverse():"+arr1.reverse()+"</p>");
     document.write("<p>arr1.shift():"+arr1.shift()+"</p>");
-    document.write("<p>arr1.sort():"+arr1.sort()+"</p>");
+    document.write("<p>arr1.unshift(6,7):"+arr1.unshift(6,7)+"</p>");
+    document.write("<p>arr2.slice(2,3):"+arr2.slice(2,3)+"</p>");
+    document.write("<p>arr2.sort(function(a,b){return b-a;}):"+arr2.sort(function(a,b){return b-a;})+"</p>");
+    document.write("<p>arr2.splice(2,3) 删除数组中的元素，返回被删除的数组，改变原数组:"+arr2.splice(2,3)+"</p>");
+    document.write("<p>Array.isArray(arr1):"+Array.isArray(arr1)+"</p>");
+    document.write("<p>arr1.every(fun):"+arr1.every(function(element,index,arr1){return Boolean(element)==true;})+"</p>");
+    document.write("<p>arr1.filter(fun):"+arr1.filter(function(element,index,arr1){return Boolean(element)==true;})+"</p>");
+    document.write("<p>[1，2，3，4].reduce():"+[1,2,3,4].reduce(function(previousValue, currentValue){return previousValue+currentValue;})+"</p>");
+    document.write("<p>['a','b','c'].reduceRight():"+["a","b","c"].reduceRight(function(previousValue, currentValue){return previousValue+currentValue;})+"</p>");
+    document.write("<p>[1，2，3，4].some():"+[1,2,3,4].some(function(element){return element>4})+"</p>");
+
+    var a=[1];
+    document.write("a"+a.slice(1,0))
+
+//数字数组 转换成字符串数组
+    var arr=[2,1,0];
+    document.write(typeof (arr[0])); //number
+    var arrS=arr.toString().split(",");
+    document.write(typeof (arrS[0])); //string
+    document.write(arrS);  //2,1,0
+
 </script>
 </html>

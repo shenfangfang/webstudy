@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<span id="s"></span>
+<script type="text/javascript">
+    <!-- 理解闭包-->
+    var name = "The Window";
+    var object = {
+        name : "My Object",
+        getNameFunc : function(){
+            return function(){
+                return this.name;
+            };
+        }
+    };
+    alert(object.getNameFunc()());
+
+
+//对象的constructor属性中保存着用于创建当前对象的函数
+    function person(){
+        return 1;
+    }
+
+    var o=new person();
+    alert(o.constructor);
+
+//    函数声明与函数表达式 ,函数表达式不会被提升。
+    alert(sum);
+    alert(sum(1,2));
+
+    var sum=function (a,b){
+        return a+b;
+    }
+
+
+
+</script>
+</body>
+</html>

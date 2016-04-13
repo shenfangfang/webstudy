@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    //for in 返回的是所有能够通过对象访问的、可枚举的属性
+    function Person(){
+    }
+    Person.prototype.age=20;
+    Person.prototype.name="Lily";
+
+    var person1=new Person();
+    person1.name="NIKE";
+    person1.sayName= function () {return this.name;}
+    for(var prop in person1){
+        document.write(prop+"</br>");
+    }
+
+//    Object.keys() 可以取得对象上所有可枚举的实例属性
+
+    document.write("Object.keys: "+Object.keys(person1)+"</br>");
+
+//    而Object.getOwnPropertyNames()会返回对象所有的实例属性，包含不可枚举的,例如constructor
+    document.write("Object.getOwnPropertyNames: "+Object.getOwnPropertyNames(Person.prototype));
+</script>
+</html>
