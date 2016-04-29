@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基础选择器与层次选择器</title>
+    <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
+    <script src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        .red{color:red;}
+        .green{color:green;}
+        div.parent, p, label,span {  float: left;  border: solid 1px #666;  margin: 5px;  padding: 5px;  }
+        label {  width: 35px;  height:30px  }
+    </style>
+</head>
+<body>
+<div id="divtest">div的内容</div>
+<div id="default"></div>
+
+<button id="btntest">点我</button>
+
+<div class="red">立正，向我这边看齐</div>
+<div class="green">我先歇歇脚</div>
+
+<div class="parent">
+    <p>span前面的同辈元素p</p>
+    <span>span元素</span>
+    <p>
+        <label>label</label>
+    </p>
+    <p>span后面的同辈元素p</p>
+    <label>label</label>
+</div>
+<script type="text/javascript">
+//    jQuery("*").css("color","#CCC");
+//    var jq=jQuery.noConflict();
+//    jq("*").css("color","#CCC");
+
+
+//    id选择器
+    $("#default").html($("#divtest").html());
+//    元素选择器
+    $("button").attr("disabled","true");
+//    class选择器
+    var $redHTML = $(".red").html();
+    $(".green").html($redHTML);
+//    * 选择器
+//    $("*").css("color","pink");
+
+//  sele1,sele2,seleN选择器
+//$(".red,.green,button").html("hi,我们的样子很美哦!");
+
+//   ance desc选择器
+//   $(".parent label").css("color","blue");
+
+//    parent > child选择器
+//    $(".parent>label").css("color","green");
+
+//    prev + next选择器
+//    $("span+p").css("background-color","green");
+
+//   prev ~ siblings选择器
+//   $("span~p").css("background-color","red");
+//siblings()方法可以选定指定元素前后所有的同辈元素
+//   $("span").siblings("p").css("background-color","yellow");
+</script>
+</body>
+</html>

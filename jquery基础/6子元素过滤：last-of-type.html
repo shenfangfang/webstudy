@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        span.solast { text-decoration:line-through; }
+        /*span:last-of-type{color:red}*/
+    </style>
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>-->
+    <script src="../jquery/jquery-2.1.4.js"></script>
+</head>
+<body>
+<div>
+    <span>Corey,</span>
+    <span>Yehuda,</span>
+    <span>Adam,</span>
+    <span>Todd</span>
+</div>
+<div>
+    <span>Jorn,</span>
+    <span>Scott,</span>
+    <span>Timo,</span>
+    <b>Nobody</b>
+</div>
+<span>Jorn,</span>
+<span>Scott,</span>
+<span>Timo,</span>
+<p>
+    <span>Jorn,</span>
+    <span>Scott,</span>
+    <span>Timo,</span>
+    <span>Timo,</span>
+</p>
+</body>
+<script>
+   // 选择的所有元素之间具有相同元素名称的最后一个兄弟元素;  有个需要注意的问题是：以body为父元素匹配的子元素无法选中
+    $("span:last-of-type")
+            .css({color:"red", fontSize:"80%"})
+            .hover(function () {
+                $(this).addClass("solast");
+            }, function () {
+                $(this).removeClass("solast");
+            });
+</script>
+
+
+</html>

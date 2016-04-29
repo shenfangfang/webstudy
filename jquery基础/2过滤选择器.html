@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../jquery/jquery-1.11.3.js"></script>
+    <title>过滤选择器</title>
+</head>
+<body>
+<h3>改变最后一行"苹果"背景颜色：</h3>
+<ol id="firsOl">
+    <li>葡萄</li>
+    <li>香蕉</li>
+    <li>橘子</li>
+    <li>西瓜</li>
+    <li>苹果</li>
+</ol>
+<span>不要选择我</span>
+
+<h3>改变包含"jQuery"字符内容的背景色：</h3>
+<ol>
+    <li>强大的"jQuery"</li>
+    <li>"javascript"也很实用</li>
+    <li>"jQuery"前端必学</li>
+    <li>"java"是一种开发语言</li>
+    <li>前端利器——"jQuery"</li>
+</ol>
+
+
+<div>改变包含"label"元素的背景色：</div>
+<ol>
+    <li><p>我是P先生</p></li>
+    <li><label>L妹纸就是我</label></li>
+    <li><p>我也是P先生</p></li>
+    <li><label>我也是L妹纸哦</label></li>
+    <li><p>P先生就是我哦</p></li>
+</ol>
+
+<h3>显示隐藏元素的内容</h3>
+<input id="hidstr1" type="hidden" value="我已隐藏起来,我是1"/>
+<div id="hidstr2" style="display:none">我已隐藏起来，我是2</div>
+<!--元素visibility: hidden或opacity: 0被认为是可见的，因为他们仍然占据布局空间-->
+<div id="hidstr3" style="visibility:hidden;">我已隐藏起来,我是3</div>
+<div id="hidstr4" style="opacity:0;color: orange;">我已隐藏起来，我是4</div>
+<div id="showHid">showHid</div>
+
+<div id="nohidstr">我不是隐藏文本1</div>
+<div id="showNoHid">showNoHid</div>
+
+<table border="1">
+    <tr>
+        <td>TD #0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TD #2</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>TD#5</td>
+    </tr>
+</table>
+
+<h3>改变"title"属性值为"蔬菜"的背景色</h3>
+<ul>
+    <li title="蔬菜">茄子</li>
+    <li title="水果">香蕉</li>
+    <li title="蔬菜">芹菜</li>
+    <li title="水果">苹果</li>
+    <li title="水果" id="fruit">西瓜</li>
+    <li title="不是水果也不是蔬菜">西瓜太郎</li>
+</ul>
+<script type="text/javascript">
+    /*
+     基本过滤出选择器
+     */
+//        // :first 选取第一个元素、:last选择器  选取最后一个元素
+//        $("#firsOl li:last").css("background-color", "red");
+//         // :not(Selector)  去除所有与给定选择器匹配的元素,不推荐用；推荐使用.not方法
+//         $(":not(li:even)").css("color", "pink");
+//         $('li').not(':even').css('background-color', 'red');   //这里$("li")选择的是页面中所有li的集合
+    //:even 选取索引是偶数的所有元素，索引从0开始;  :odd 选取索引是奇数的所有元素，索引从0开始
+//        $("ol:even").css("background-color", "yellow");
+//        $("ol:odd").css("background-color", "pink");
+
+       //     :eq(index)  :gt(index) :lt(index)
+//        $("li:eq(6)").css("background-color", "red");
+//        $("li:lt(6)").css("background-color", "pink");
+//        $("li:gt(6)").css("background-color", "green");
+        //:header
+//        $(":header").css("color","purple");
+
+    /*
+     内容过滤出选择器
+     */
+    //     :contains(text)过滤选择器
+//        $("li:contains('jQuery')").css("background", "green")
+    //    //    :empty 选取不包含子元素或者文本的空元素
+//            $("td:empty").text("Was empty!").css('background', 'rgb(255,220,200)');
+    //    //    :parent 选取含有子元素或者文本的元素
+//        $("td:parent").text("Not empty!").css('background', 'rgb(255,255,200)');
+    //    //  :has(selector)选取含有选择器所匹配的元素的元素
+//        $("li:has('label')").css("background-color", "blue");
+
+    /*
+     可见性过滤出选择器
+     */
+    //    //:hidden过滤选择器
+        var $str1 = $("input:hidden").val();
+        var $str2 = $("#hidstr2:hidden").text();
+        var $str3=$("#hidstr3:hidden").text(); //visibility:hidden 选择不到，因此console.log($str3)===undefined
+        var $str4=$("#hidstr4:hidden").text(); //opacity:hidden 选择不到,因此console.log($str4)===undefined
+//      $("#showHid").text($str1).css("color","red");
+//      $("#showHid").text($str2).css("color","red");
+//      $("#showHid").text($str3).css("color","red");
+//      $("#showHid").text($str4).css("color","red");
+    //    //:visible过滤选择器
+//        var $strHTML = $("#nohidstr:visible").html();
+//        $("#showNoHid").html($strHTML).css("color","red");
+
+    /*
+     属性过滤出选择器
+     */
+    //  // [attribute]  选取拥有此属性的元素
+//         $("li[title]").css("color","red");
+    //    [attribute=value]  选取属性的值为value的元素
+
+//        $("li[title='蔬菜']").css("color","red");
+    //    //    [attribute!=value] 选取属性的值不等于value的元素
+
+//        $("li[title!='蔬菜']").css("color","green");
+    //  //  [attribute^=value]  选取属性的值以value开始的元素
+//        $("li[title^='蔬']").text("我是蔬菜");
+    //    //    [attribute$=value]  选取属性的值以value结束的元素
+    //    $("li[title$='果']").text("我是水果");
+    //   // [attribute*=value] 选取属性的值含有value的元素
+//        $("li[title*='果']").text("我不一定是水果");
+    //    //复合属性选择器
+//       $("[title$='果'][id]").css("color","green")
+
+
+</script>
+</body>
+</html>

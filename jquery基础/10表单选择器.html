@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /*input,span{display:block;}*/
+        textarea { height:35px; }
+        div { color: red; }
+        span{padding:10px;}
+        fieldset { margin: 0; padding: 0; border-width: 0; }
+        .marked { background-color: yellow; border: 3px red solid; }
+    </style>
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>-->
+    <script src="../jquery/jquery-1.11.3.js"></script>
+</head>
+<body>
+<form>
+    <fieldset>
+        <input type="button" value="Input Button"/>
+        <input type="checkbox" />
+
+        <input type="file" />
+        <input type="hidden" />
+        <input type="image" />
+
+        <input type="password" />
+        <input type="radio" />
+        <input type="reset" />
+
+        <input type="submit" />
+        <input type="text" />
+        <select>
+            <option>Option1</option>
+            <option selected="selected">Option2</option>
+        </select>
+
+        <textarea></textarea>
+        <button>Button</button>
+        <input name="email" disabled="disabled" />
+    </fieldset>
+
+</form>
+
+<div>
+</div>
+<script>
+//    var input = $(":button").addClass("marked");
+//    $("div").text( "For this type jQuery found " + input.length + "." );
+//    $("form").submit(function () { return false; }); // so it won't submit
+
+
+//    var input = $("form input:checkbox").wrap('<span></span>').parent().css({background:"yellow", border:"3px red solid"});
+//    $("div").text("For this type jQuery found " + input.length + ".")
+//            .css("color", "red");
+//    $("form").submit(function () { return false; }); // so it won't submit
+
+
+
+//     $("input:enabled").wrap('<span></span>').parent().css({background:"yellow", border:"3px red solid"});
+//    $("input:disabled").wrap('<span></span>').parent().css({background:"green", border:"3px red solid"});
+
+    $("select option:selected").text('be chosed');
+</script>
+
+</body>
+</html>

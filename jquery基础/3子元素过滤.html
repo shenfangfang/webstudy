@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fist-child\last-child\only-child</title>
+    <script src="../jquery/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        span {  color: #008;  }
+
+        span.sogreen {  color: green;  font-weight: bolder;  }
+
+        span.solast {  text-decoration: line-through;  }
+
+        span.fot {  color: red;  font-size: 120%;  font-style: italic;  }
+    </style>
+</head>
+<body>
+<div>
+    <span>John,</span>
+    <span>Karl,</span>
+    <span>Brandon</span>
+</div>
+<div>
+    <span>Glen,</span>
+    <span>Tane,</span>
+    <span>Ralph</span>
+
+</div>
+<span>Glen,</span>
+<span>Tane,</span>
+<span>Ralph</span>
+
+
+<!--:only-child-->
+<div>
+    <button>Sibling!</button>
+    <button>Sibling!</button>
+</div>
+
+<div>
+    <button>Sibling!</button>
+</div>
+<div>
+    None
+</div>
+
+<div>
+    <button>Sibling!</button>
+    <button>Sibling!</button>
+    <button>Sibling!</button>
+</div>
+<div>
+    <button>Sibling!</button>
+</div>
+<span>Glen,</span>
+<span>Tane,</span>
+<span>Ralph</span>
+<script>
+    $("div span:first-child")
+            .css("text-decoration", "underline")
+            .hover(function () {
+                $(this).addClass("sogreen");
+            }, function () {
+                $(this).removeClass("sogreen");
+            });
+
+
+//    $("div span:last-child")
+//            .css({color: "red", fontSize: "80%"})
+//            .hover(function () {
+//                $(this).addClass("solast");
+//            }, function () {
+//                $(this).removeClass("solast");
+//            });
+
+
+//    $("button:only-child").text("Alone").css("border", "2px blue solid");
+
+
+</script>
+</body>
+</html>
