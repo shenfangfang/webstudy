@@ -1,0 +1,14 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+body{font: 12px/150% Arial,Verdana,"\5b8b\4f53";color:#666;background:#fff;-webkit-font-smoothing: antialiased;}
+a{text-decoration:none;}
+ul li{list-style:none;}
+.w{width:1210px;margin:0 auto;}
+.spacer{width:1px;height:12px!important;background:#DDDDDD;margin-top:9px;}
+/*header  css */
+#header{background:#F1F1F1;width:100%;line-height:30px;height:30px;}
+.headerbox{width:1210px;}
+.headerbox .header-left{float:left;padding:0 0 24px 0; position:relative;}
+.headerbox .ci-right{font:15px/15px consolas;height:7px;width:15px;overflow:hidden;position:relative;display:inline-block;padding-left:10px;}
+.headerbox .ci-right s{position:absolute;top:1px;}
+.headerbox .header-right{float:right}
+.header-right li{float:left;}
